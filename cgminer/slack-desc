@@ -1,0 +1,20 @@
+# HOW TO EDIT THIS FILE:
+# The "handy ruler" below makes it easier to edit a package description.  Line
+# up the first '|' above the ':' following the base package name, and the '|'
+# on the right side marks the last column you can put a character in.  You must
+# make exactly 11 lines for the formatting to be correct.  It's also
+# customary to leave one space after the ':'.
+
+       |-----handy-ruler------------------------------------------------------|
+cgminer: cgminer
+cgminer: This is a multi-threaded multi-pool GPU, FPGA and ASIC miner with ATI
+cgminer: GPU monitoring, (over)clocking and fanspeed support for bitcoin and
+cgminer: derivative coins. Do not use on multiple block chains at the same
+cgminer: time! 
+cgminer: 
+cgminer: This code is provided entirely free of charge by the programmer in
+cgminer: his spare time so donations would be greatly appreciated. Please
+cgminer: consider donating to the address below.
+cgminer: Con Kolivas <kernel@kolivas.org>
+cgminer: 15qSxP1SQcUX3o4nhkfdbgyoWEFMomJ4rZ
+cgminer:
