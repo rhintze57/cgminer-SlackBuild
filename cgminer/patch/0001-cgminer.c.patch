@@ -1,0 +1,26 @@
+--- cgminer.c~	2019-04-28 12:08:08.000000000 -0400
++++ cgminer.c	2019-04-28 12:08:08.000000000 -0400
+@@ -5415,7 +5415,7 @@
+ 	int ofs;
+ 
+ 	cg_wlock(&ch_lock);
+-	cgtime(&block_timeval);
++	cgtime_real(&block_timeval);
+ 	strcpy(current_hash, hexstr);
+ 	cg_memcpy(current_block, bedata, 32);
+ 	get_timestamp(blocktime, sizeof(blocktime), &block_timeval);
+@@ -10718,10 +10718,13 @@
+ 		total_tv_start_sys=sInfo.uptime;
+ 	}
+ #endif
++
++	cgtime_real(&total_tv_start);
++	get_datestamp(datestamp, sizeof(datestamp), &total_tv_start);
++
+ 	cgtime(&total_tv_start);
+ 	cgtime(&total_tv_end);
+ 	cgtime(&tv_hashmeter);
+-	get_datestamp(datestamp, sizeof(datestamp), &total_tv_start);
+ 
+ 	watchpool_thr_id = 2;
+ 	thr = &control_thr[watchpool_thr_id];

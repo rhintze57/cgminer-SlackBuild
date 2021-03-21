@@ -1,0 +1,10 @@
+--- util.h~	2019-04-28 12:08:08.000000000 -0400
++++ util.h	2019-04-28 12:08:08.000000000 -0400
+@@ -122,6 +122,7 @@
+ int thr_info_create(struct thr_info *thr, pthread_attr_t *attr, void *(*start) (void *), void *arg);
+ void thr_info_cancel(struct thr_info *thr);
+ void cgcond_time(struct timespec *abstime);
++void cgtime_real(struct timeval *tv);
+ void cgtime(struct timeval *tv);
+ void subtime(struct timeval *a, struct timeval *b);
+ void addtime(struct timeval *a, struct timeval *b);
