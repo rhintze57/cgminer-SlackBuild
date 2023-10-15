@@ -24,7 +24,7 @@
 # -----------------------------------------------------------------------------
 
 PRGNAM=cgminer
-VERSION=${VERSION:-4.12.1}
+VERSION=${VERSION:-4.11.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rah}
 
@@ -52,7 +52,7 @@ elif [ "$ARCH" = "s390" ]; then
   SLKLDFLAGS=""
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
-  SLKCFLAGS="-O2 -fPIC -fcommon"
+  SLKCFLAGS="-O2 -Wall -fcommon"
   SLKLDFLAGS="-L/usr/lib64"
   LIBDIRSUFFIX="64"
 elif [ "$ARCH" = "armv7l" ]; then
@@ -121,21 +121,12 @@ LDFLAGS="$SLKLDFLAGS" \
   --localstatedir=/var \
   --with-system-jansson \
   --build=$ARCH-slackware-linux \
-  --enable-bab \
   --enable-bflsc \
   --enable-bitforce \
   --enable-bitfury \
-  --enable-modminer \
   --enable-avalon \
-  --enable-avalon2 \
-  --enable-avalon4 \
-  --enable-avalon7 \
-  --enable-avalon8 \
-  --enable-cointerra \
   --enable-gekko \
-  --enable-hashratio \
-  --enable-icarus \
-  --enable-klondike
+  --enable-icarus 
   
 # Build and install:
 make $NUMJOBS || make || exit 1
