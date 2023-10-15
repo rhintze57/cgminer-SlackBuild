@@ -96,11 +96,11 @@ find . \
   \( -perm 666 -o -perm 664 -o -perm 600 -o -perm 444 -o -perm 440 -o -perm 400 \) \
   -exec chmod 644 {} \;
 
-# patch to fix clock
-patch -p0 -i $CWD/patch/0001-cgminer.c.patch
-patch -p0 -i $CWD/patch/0002-logging.c.patch
-patch -p0 -i $CWD/patch/0003-util.c.patch
-patch -p0 -i $CWD/patch/0004-util.h.patch
+# patch to fix clock  removed as applied upstream
+#patch -p0 -i $CWD/patch/0001-cgminer.c.patch
+#patch -p0 -i $CWD/patch/0002-logging.c.patch
+#patch -p0 -i $CWD/patch/0003-util.c.patch
+#patch -p0 -i $CWD/patch/0004-util.h.patch
 
 #automake
 CFLAGS="$SLKCFLAGS" ./autogen.sh
