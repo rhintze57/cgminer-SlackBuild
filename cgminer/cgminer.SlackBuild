@@ -121,15 +121,21 @@ LDFLAGS="$SLKLDFLAGS" \
   --localstatedir=/var \
   --with-system-jansson \
   --build=$ARCH-slackware-linux \
-  --enable-icarus \
-  --disable-opencl \
-  --disable-adl \
+  --enable-bab \
   --enable-bflsc \
   --enable-bitforce \
   --enable-bitfury \
   --enable-modminer \
-  --enable-ztex \
-  --enable-avalon
+  --enable-avalon \
+  --enable-avalon2 \
+  --enable-avalon4 \
+  --enable-avalon7 \
+  --enable-avalon8 \
+  --enable-cointerra \
+  --enable-gekko \
+  --enable-hashratio \
+  --enable-icarus \
+  --enable-klondike
   
 # Build and install:
 make $NUMJOBS || make || exit 1
