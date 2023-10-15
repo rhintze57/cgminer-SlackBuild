@@ -24,7 +24,7 @@
 # -----------------------------------------------------------------------------
 
 PRGNAM=cgminer
-VERSION=${VERSION:-4.11.1}
+VERSION=${VERSION:-4.12.1}
 BUILD=${BUILD:-1}
 TAG=${TAG:-_rah}
 
@@ -44,11 +44,11 @@ if [ -z "$ARCH" ]; then
 fi
 
 if [ "$ARCH" = "i486" ]; then
-  SLKCFLAGS="-O2 -march=i486 -mtune=i686"
+  SLKCFLAGS="-O2 -march=i486 -mtune=i686 -fcommon"
   SLKLDFLAGS=""
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "s390" ]; then
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -fcommon"
   SLKLDFLAGS=""
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "x86_64" ]; then
@@ -56,18 +56,18 @@ elif [ "$ARCH" = "x86_64" ]; then
   SLKLDFLAGS="-L/usr/lib64"
   LIBDIRSUFFIX="64"
 elif [ "$ARCH" = "armv7l" ]; then
-        SLKCFLAGS="-O2 -mfloat-abi=softfp -march=native -mtune=native"
+        SLKCFLAGS="-O2 -mfloat-abi=softfp -march=native -mtune=native -fcommon"
   SLKLDFLAGS=""
   LIBDIRSUFFIX=""  
 elif [ "$ARCH" = "armv7hl" ]; then
-  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16"
+  SLKCFLAGS="-O2 -march=armv7-a -mfpu=vfpv3-d16 -fcommon"
   SLKLDFLAGS=""
   LIBDIRSUFFIX=""
 elif [ "$ARCH" = "armv6hl" ]; then
-  SLKCFLAGS="-O2 -march=armv6zk -mfpu=vfp -mtune=arm1176jzf-s -mfloat-abi=hard"
+  SLKCFLAGS="-O2 -march=armv6zk -mfpu=vfp -mtune=arm1176jzf-s -mfloat-abi=hard -fcommon"
   LIBDIRSUFFIX=""
 else
-  SLKCFLAGS="-O2"
+  SLKCFLAGS="-O2 -fcommon"
   SLKLDFLAGS=""
   LIBDIRSUFFIX=""
 fi
